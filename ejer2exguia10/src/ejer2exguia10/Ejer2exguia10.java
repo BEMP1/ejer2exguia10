@@ -27,11 +27,11 @@ public class Ejer2exguia10 {
             System.out.println("Datos del edificio " + cont);
             cont++;
             System.out.println("La superficie es " + edificio.calcularSuperficie() + "m^2");
-            System.out.println("El volumen es "+edificio.calcularVolumen()+ "m^3");
+            System.out.println("El volumen es " + edificio.calcularVolumen() + "m^3");
             if (edificio instanceof Polideportivo) {
                 if (((Polideportivo) edificio).isTechado()) {
                     techados++;
-                }     
+                }
             }
             if (edificio instanceof EdificioDeOficinas) {
                 System.out.println("Pueden haber " + ((EdificioDeOficinas) edificio).cantPersonas() + " personas en el edificio de oficinas");
