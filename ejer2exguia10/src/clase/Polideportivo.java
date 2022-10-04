@@ -9,8 +9,6 @@ public class Polideportivo extends Edificio {
 
     public Polideportivo() {
     }
-    
-    
 
     public Polideportivo(String nombre, boolean techado, double ancho, double largo, double altura) {
         super(ancho, largo, altura);
@@ -69,16 +67,27 @@ public class Polideportivo extends Edificio {
     }
 
     @Override
-    public void crearEdificio(){
+    public void crearEdificio() {
         Scanner leer = new Scanner(System.in, "ISO-8859-1").useDelimiter("\n");
+        char respuesta;
         super.crearEdificio();
         System.out.println("ingrese el nombre");
         this.nombre = leer.next();
         System.out.println("Ingrese si esta techado S/N");
-        if (leer.next().toUpperCase().charAt(0) == 'S') {
+        respuesta = leer.next().toUpperCase().charAt(0);
+        if (respuesta == 'S') {
             this.techado = true;
         } else {
             this.techado = false;
+        }
+        while (respuesta != 'S' && respuesta != 'N') {
+            System.out.println("No se ingreso S o N");
+            respuesta = leer.next().toUpperCase().charAt(0);
+            if (respuesta == 'S') {
+                this.techado = true;
+            } else {
+                this.techado = false;
+            }
         }
     }
 }
